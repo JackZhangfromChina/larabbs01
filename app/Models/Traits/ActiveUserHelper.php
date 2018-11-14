@@ -7,6 +7,7 @@ use App\Models\Reply;
 use Carbon\Carbon;
 use Cache;
 use DB;
+use Redis;
 
 trait ActiveUserHelper
 {
