@@ -14,6 +14,10 @@ class User extends Authenticatable
     use HasRoles;
     use Traits\ActiveUserHelper;
     use Traits\LastActivedAtHelper;
+
+    protected $fillable = [
+        'name', 'phone', 'email', 'password', 'introduction', 'avatar',
+    ];
     public function notify($instance)
     {
         // 如果要通知的人是当前用户，就不必通知了！
@@ -23,15 +27,6 @@ class User extends Authenticatable
         $this->increment('notification_count');
         $this->laravelNotify($instance);
     }
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password','introduction','avatar'
-    ];
 
     /**
      * The attributes that should be hidden for arrays.
