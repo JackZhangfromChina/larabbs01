@@ -168,7 +168,7 @@ return [
     */
 
     'auth' => [
-
+        'jwt' => 'Dingo\Api\Auth\Provider\JWT',
     ],
 
     /*
@@ -243,5 +243,6 @@ return [
             'limit'  => env('SIGN_RATE_LIMITS', 10),
         ],
     ],
+
 
 ];
